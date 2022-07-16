@@ -30,18 +30,20 @@ void main() {
   );
 }
 
-class DicePage extends StatelessWidget {
-  DicePage({Key? key}) : super(key: key);
+class DicePage extends StatefulWidget {
+  const DicePage({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
+  @override
+  State<DicePage> createState() => _DicePageState();
+}
+
+// IMPORTANT, set state executes de build method only in stateful, flutter will only re-draw dirty widgets(changes in variables) will talk about this in future lessons
+class _DicePageState extends State<DicePage> {
+  int leftDiceNumber = 2;
+  int rightDiceNumber = 3;
+
   @override
   Widget build(BuildContext context) {
-    var leftDiceNumber = 1;
-    var rightDiceNumber = 5;
-    // String a;
-    // int b;
-    // dynamic c; can change its type on the fly
-
     return Center(
       child: Row(
         // ignore: prefer_const_literals_to_create_immutables
@@ -51,6 +53,9 @@ class DicePage extends StatelessWidget {
             child: TextButton(
               onPressed: () {
                 print('clicked on left');
+                setState(() {
+                  leftDiceNumber = 4;
+                });
               },
               child: Image(
                 image: AssetImage('images/dice$leftDiceNumber.png'),
@@ -62,6 +67,9 @@ class DicePage extends StatelessWidget {
             child: TextButton(
               onPressed: () {
                 print('clicked on right');
+                setState(() {
+                  rightDiceNumber = 5;
+                });
               },
               child: Image(
                 image: AssetImage('images/dice$rightDiceNumber.png'),
