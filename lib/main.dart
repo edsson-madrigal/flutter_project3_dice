@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors, avoid_print
 
+import 'dart:math';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -54,7 +55,7 @@ class _DicePageState extends State<DicePage> {
               onPressed: () {
                 print('clicked on left');
                 setState(() {
-                  leftDiceNumber = 4;
+                  leftDiceNumber = Random().nextInt(6) + 1;
                 });
               },
               child: Image(
@@ -68,7 +69,8 @@ class _DicePageState extends State<DicePage> {
               onPressed: () {
                 print('clicked on right');
                 setState(() {
-                  rightDiceNumber = 5;
+                  rightDiceNumber = Random().nextInt(6) + 1;
+                  ;
                 });
               },
               child: Image(
