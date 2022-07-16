@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, avoid_print
 
 import 'package:flutter/material.dart';
 
@@ -31,11 +31,17 @@ void main() {
 }
 
 class DicePage extends StatelessWidget {
-  const DicePage({Key? key}) : super(key: key);
+  DicePage({Key? key}) : super(key: key);
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    var leftDiceNumber = 1;
+    var rightDiceNumber = 5;
+    // String a;
+    // int b;
+    // dynamic c; can change its type on the fly
+
     return Center(
       child: Row(
         // ignore: prefer_const_literals_to_create_immutables
@@ -47,8 +53,7 @@ class DicePage extends StatelessWidget {
                 print('clicked on left');
               },
               child: Image(
-                //width: 200,
-                image: AssetImage('images/dice1.png'),
+                image: AssetImage('images/dice$leftDiceNumber.png'),
               ),
             ),
           ),
@@ -59,8 +64,7 @@ class DicePage extends StatelessWidget {
                 print('clicked on right');
               },
               child: Image(
-                //width: 200,
-                image: AssetImage('images/dice1.png'),
+                image: AssetImage('images/dice$rightDiceNumber.png'),
               ),
             ),
           ),
