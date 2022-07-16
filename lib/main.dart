@@ -36,21 +36,29 @@ class DicePage extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return Row(
-      // ignore: prefer_const_literals_to_create_immutables
-      children: [
-        Expanded(
-          flex: 2,
-          child: Image(
-            //width: 200,
-            image: AssetImage('images/dice1.png'),
+    return Center(
+      child: Row(
+        // ignore: prefer_const_literals_to_create_immutables
+        children: [
+          Expanded(
+            flex: 1,
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Image(
+                //width: 200,
+                image: AssetImage('images/dice1.png'),
+              ),
+            ),
           ),
-        ),
-        Expanded(
-          flex: 1,
-          child: Image.asset('images/dice2.png'),
-        ),
-      ],
+          Expanded(
+            flex: 1,
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Image.asset('images/dice2.png'),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
